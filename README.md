@@ -1,2 +1,0 @@
-# yimashusheng.github.io
-blog
