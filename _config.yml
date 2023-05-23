@@ -19,20 +19,19 @@
 # in the templates via {{ site.myvariable }}.
 
 title: 易码书生
-email: your-email@example.com
+email: yimashusheng@163.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+ 中国传统文化拥有着博大精深的内涵，其中包括易经、紫微斗数、大六壬、铁板数等等。这些文化传承已久，具有深厚的历史文化底蕴和哲学思辨意蕴，是推动中国文化发展和世界文化多元化的重要组成部分。
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://yimashusheng.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
-github_username:  jekyll
+github_username:  yimashusheng
 
 # Build settings
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
 
 # Exclude from processing.
 # The following items will not be processed, by default.
