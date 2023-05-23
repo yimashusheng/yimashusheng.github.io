@@ -24,7 +24,7 @@ description: >- # this means to ignore newlines until "baseurl:"
  中国传统文化拥有着博大精深的内涵，其中包括易经、紫微斗数、大六壬、铁板数等等。这些文化传承已久，具有深厚的历史文化底蕴和哲学思辨意蕴，是推动中国文化发展和世界文化多元化的重要组成部分。
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://yimashusheng.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
+# twitter_username: jekyllrb
 github_username:  yimashusheng
 
 # Build settings
