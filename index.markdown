@@ -3,13 +3,17 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: page
-title: 紫微斗数
+title: 紫微斗数排盘工具
 permalink: /
 ---
 ![紫微斗数](/images/zwds/zwds_3.png)
 
+# 软件下载
+
+[紫微斗数排盘工具](/downloads/紫微斗数排盘工具.zip)
 
 # 更新记录
+
 ## 2023年5月23日
 1. 新增：根据倪师视频讲解，计算先天卦、后天卦、流年卦。
 2. 新增：自主配置星曜的庙旺利陷、四化，安火星铃星方法，大限显示方式。
