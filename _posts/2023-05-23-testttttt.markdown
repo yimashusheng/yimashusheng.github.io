@@ -8,3 +8,5 @@ asdfasdf
 asdfasdfa
 
 asdfasdf
+
+![插入图片](/images/蓑笠翁.png)
