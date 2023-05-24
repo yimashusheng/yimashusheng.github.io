@@ -7,6 +7,5 @@ permalink: /about/
 
 
 
-欢迎关注作者抖音：
+软件使用过程中，遇到任何问题，或者您有更好的建议，欢迎给易码书生发邮件：yimashusheng@163.com
 
-![抖音](/images/douyin1.jpg)
