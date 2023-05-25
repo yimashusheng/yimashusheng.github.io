@@ -7,5 +7,5 @@ permalink: /about/
 
 
 
-软件使用过程中，遇到任何问题，或者您有更好的建议，欢迎给易码书生发邮件：yimashusheng@163.com
+软件使用过程中，遇到任何问题，或者您有更好的建议，欢迎给易码书生发邮件：<yimashusheng@163.com>
 
