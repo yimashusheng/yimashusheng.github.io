@@ -1,7 +1,7 @@
 ---
-layout: post
-title:  "ttttest"
-date:   2023-05-23 03:30:07 +0800
-categories: hhhhicat
+layout:		post
+title:		"ttttest"
+date:		2023-05-23 03:30:07 +0800
+categories:	articles
 ---
 hahahahahahhahahahahah
