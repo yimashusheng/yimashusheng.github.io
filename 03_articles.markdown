@@ -1,6 +1,6 @@
 ---
 layout: home
-title: 文章
+title: 随笔
 permalink: /articles/
 ---
 
