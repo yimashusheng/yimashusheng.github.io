@@ -3,7 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: page
-title: 紫微斗数排盘工具
+title: 紫微斗数工具
 permalink: /
 ---
 ![紫微斗数](/images/zwds/zwds_3.png)
