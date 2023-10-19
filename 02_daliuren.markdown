@@ -6,10 +6,6 @@ permalink: /daliuren/
 
 ![大六壬排盘工具](/images/dlr/dlr_2.png)
 
-# 软件下载
-
-[大六壬排盘工具_20230524](/downloads/大六壬20230524.zip)  
-
 # 更新记录
 
 ## 2023-10-09
