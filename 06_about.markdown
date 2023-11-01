@@ -11,5 +11,5 @@ permalink: /about/
 
 或者抖音联系
 
-![紫微斗数](/images/douyin.jpg)
+![紫微斗数](/images/douyin2.jpg)
 
