@@ -25,3 +25,20 @@ layout: default
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
+
+
+<div id="container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: '{{page.date}}',
+  owner: 'yimashusheng',
+  repo: 'yimashusheng.github.io',
+  oauth: {
+    client_id: '359c93a360225f23c042',
+    client_secret: '6abafaea12a8e347d689ec768997dbc144f8219b',
+  },
+})
+gitment.render('container')
+</script>
