@@ -41,7 +41,7 @@ layout: default
          repo: 'yimashusheng.github.io', //customize
          owner: 'yimashusheng', //customize
          admin: ['yimashusheng'], //customize
-         id: window.location.pathname, // leave this line as it is
+         id: decodeURI('{{ page.url }}'), // leave this line as it is
         
      });
      gitalk.render('gitalk-container');
