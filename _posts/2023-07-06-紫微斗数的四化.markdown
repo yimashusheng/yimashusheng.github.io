@@ -1,7 +1,6 @@
 ---
 layout:		post
 title:		紫微斗数的四化
-date:		2023-07-06 02:19:07 +0800
 categories:	articles
 ---
 紫微斗数中的四化是化科，化禄，化权，化忌。
