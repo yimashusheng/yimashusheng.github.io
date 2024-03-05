@@ -27,6 +27,8 @@ url: "https://yimashusheng.github.io" # the base hostname & protocol for your si
 # twitter_username: jekyllrb
 github_username:  yimashusheng
 
+show_excerpts: true
+
 # Build settings
 theme: minima
 plugins:
