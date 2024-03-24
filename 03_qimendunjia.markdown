@@ -5,6 +5,8 @@ description: 奇门遁甲，原来是中国古老的一门术数。它往往被�
 permalink: /qimendunjia/
 ---
 
+![奇门遁甲排盘工具](/images/qmdj/qmdj_cover.png)
+
 # 软件下载
 
 **温馨提示：这个软件是Windows系统版本，只能在Windows系统中运行，无法在苹果电脑、ipad、手机等设备中运行。**
