@@ -9,5 +9,7 @@ permalink: /about/
 
 邮箱：<yimashusheng@163.com>
 
-抖音：![紫微斗数](/images/douyin2.jpg)
+抖音：
+
+![紫微斗数](/images/douyin2.jpg)
 
