@@ -7,9 +7,7 @@ permalink: /about/
 
 由于软件开发者学力所限，软件中难免存在一些错讹之处，恳请使用者朋友批评指正。
 
-邮件：<yimashusheng@163.com>
+邮箱：<yimashusheng@163.com>
 
-或者抖音联系
-
-![紫微斗数](/images/douyin2.jpg)
+抖音：![紫微斗数](/images/douyin2.jpg)
 
