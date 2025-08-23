@@ -11,7 +11,7 @@ QQ：3203906746
 
 邮箱：<yimashusheng@163.com>
 
-抖音：
+抖音：898898157（易码书生🍀）
 
 ![紫微斗数](/images/douyin2.jpg)
 
