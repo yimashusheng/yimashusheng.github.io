@@ -37,53 +37,24 @@ permalink: /search/
     };
   }
 
-  // 高亮显示函数
-  function highlightText(text, query) {
-    if (!query) return text;
-    
-    const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
-    return text.replace(regex, '<mark>$1</mark>');
-  }
-
-  // 生成摘要
-  function generateExcerpt(content, query, length = 200) {
-    if (!query) {
-      return content.substring(0, length) + '...';
-    }
-    
-    const lowerContent = content.toLowerCase();
-    const lowerQuery = query.toLowerCase();
-    const queryIndex = lowerContent.indexOf(lowerQuery);
-    
-    if (queryIndex === -1) {
-      return content.substring(0, length) + '...';
-    }
-    
-    // 让关键词出现在摘要中间位置
-    const start = Math.max(0, queryIndex - Math.floor(length / 2));
-    const end = Math.min(content.length, start + length);
-    
-    let excerpt = content.substring(start, end);
-    if (start > 0) excerpt = '...' + excerpt;
-    if (end < content.length) excerpt = excerpt + '...';
-    
-    return excerpt;
-  }
-
-  // 主要变量
   let idx = null;
   let postsData = [];
   let isInitialized = false;
 
-  // 1. 初始化搜索
+  // 检查中文分词支持是否可用
+  function isChineseSupportAvailable() {
+    return typeof lunr !== 'undefined' && 
+           typeof lunr.zh !== 'undefined' &&
+           typeof lunr.multi !== 'undefined';
+  }
+
+  // 初始化搜索
   function initSearch() {
     console.log('正在加载搜索索引...');
     
     fetch('/search.json')
       .then(response => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
+        if (!response.ok) throw new Error(`HTTP错误! 状态: ${response.status}`);
         return response.json();
       })
       .then(data => {
@@ -97,25 +68,45 @@ permalink: /search/
         postsData = data;
         
         try {
-          // 2. 使用中文支持构建Lunr索引
+          // 检查中文支持
+          const hasChineseSupport = isChineseSupportAvailable();
+          console.log('中文分词支持:', hasChineseSupport ? '已启用' : '未启用，使用英文搜索');
+          
+          // 构建Lunr索引
           idx = lunr(function() {
-            // 启用中文分词
-            this.use(lunr.zh);
+            // 如果中文支持可用，使用中文分词
+            if (hasChineseSupport) {
+              this.use(lunr.zh);
+            } else {
+              console.warn('中文分词支持未加载，使用英文搜索模式');
+            }
             
             this.ref('id');
-            this.field('title', { boost: 15 });    // 标题权重最高
-            this.field('content', { boost: 5 });   // 内容权重次之
-            this.field('date', { boost: 1 });      // 日期权重最低
+            this.field('title', { boost: 15 });
+            this.field('content', { boost: 5 });
+            this.field('date', { boost: 1 });
             
-            // 添加停用词（中文常见停用词）
+            // 添加停用词
             this.pipeline.remove(lunr.stopWordFilter);
+            
+            // 添加自定义中文停用词（简单版）
+            if (!hasChineseSupport) {
+              const chineseStopWords = ['的', '了', '在', '是', '我', '有', '和', '就', 
+                '不', '人', '都', '一', '一个', '上', '也', '很', '到', '说', '要', '去',
+                '你', '会', '着', '没有', '看', '好', '自己', '这'];
+              
+              this.pipeline.add(function(token, tokenIndex, tokens) {
+                const tokenStr = token.toString();
+                if (chineseStopWords.includes(tokenStr)) {
+                  return null;
+                }
+                return token;
+              });
+            }
             
             // 添加文档
             data.forEach((doc, index) => {
-              // 确保每个文档都有id
-              if (doc.id === undefined) {
-                doc.id = index;
-              }
+              if (doc.id === undefined) doc.id = index;
               this.add(doc);
             });
           });
@@ -123,15 +114,18 @@ permalink: /search/
           console.log('Lunr索引构建完成');
           isInitialized = true;
           
-          document.getElementById('search-status').textContent = 
-            `已加载 ${data.length} 篇文章，可以开始搜索`;
+          const statusText = hasChineseSupport 
+            ? `已加载 ${data.length} 篇文章（中文搜索已启用）`
+            : `已加载 ${data.length} 篇文章（英文搜索模式）`;
           
-          // 检查是否有URL参数
+          document.getElementById('search-status').textContent = statusText;
+          
+          // 检查URL参数
           const urlParams = new URLSearchParams(window.location.search);
           const queryParam = urlParams.get('q');
           if (queryParam) {
             document.getElementById('search-input').value = queryParam;
-            performSearch(queryParam);
+            setTimeout(() => performSearch(queryParam), 500);
           }
           
         } catch (error) {
@@ -143,11 +137,11 @@ permalink: /search/
       .catch(error => {
         console.error('加载搜索索引时出错:', error);
         document.getElementById('search-status').textContent = 
-          '无法加载搜索索引，请检查网络连接';
+          '无法加载搜索索引: ' + error.message;
       });
   }
 
-  // 3. 执行搜索
+  // 执行搜索
   function performSearch(query) {
     const searchResults = document.getElementById('search-results');
     
@@ -157,7 +151,7 @@ permalink: /search/
           <h3>💡 搜索提示</h3>
           <ul>
             <li>输入关键词搜索文章内容</li>
-            <li>支持中文分词搜索</li>
+            <li>支持中文和英文搜索</li>
             <li>支持多个关键词搜索（用空格分隔）</li>
             <li>搜索结果按相关性排序</li>
           </ul>
@@ -178,7 +172,6 @@ permalink: /search/
       return;
     }
     
-    // 显示搜索中状态
     searchResults.innerHTML = '<p class="searching">正在搜索中...</p>';
     
     try {
@@ -214,17 +207,26 @@ permalink: /search/
         <div class="results-list">
       `;
       
-      // 限制显示数量
       const maxResults = 20;
       const displayResults = results.slice(0, maxResults);
       
       displayResults.forEach((result, index) => {
         const post = postsData.find(p => p.id === parseInt(result.ref));
         if (post) {
-          // 生成高亮的标题和摘要
-          const highlightedTitle = highlightText(post.title, query);
-          const excerpt = generateExcerpt(post.content, query);
-          const highlightedExcerpt = highlightText(excerpt, query);
+          // 高亮显示
+          const highlightedTitle = post.title.replace(
+            new RegExp(`(${query})`, 'gi'), 
+            '<mark>$1</mark>'
+          );
+          
+          const excerpt = post.content.length > 150 
+            ? post.content.substring(0, 150) + '...' 
+            : post.content;
+            
+          const highlightedExcerpt = excerpt.replace(
+            new RegExp(`(${query})`, 'gi'), 
+            '<mark>$1</mark>'
+          );
           
           resultsHtml += `
             <article class="search-result">
@@ -233,7 +235,6 @@ permalink: /search/
                 <h4><a href="${post.url}">${highlightedTitle}</a></h4>
                 <div class="result-excerpt">${highlightedExcerpt}</div>
                 <div class="result-footer">
-                  <span class="result-url">${window.location.origin}${post.url}</span>
                   <span class="result-date">${post.date}</span>
                 </div>
               </div>
@@ -250,28 +251,28 @@ permalink: /search/
         `;
       }
       
-      resultsHtml += '</div>'; // 关闭results-list
+      resultsHtml += '</div>';
       searchResults.innerHTML = resultsHtml;
       
     } catch (error) {
       console.error('搜索过程中出错:', error);
       searchResults.innerHTML = `
         <div class="error-message">
-          <p>搜索过程中出现错误: ${error.message}</p>
-          <p>请刷新页面重试或联系管理员</p>
+          <p>搜索过程中出现错误</p>
+          <p>${error.message}</p>
         </div>
       `;
     }
   }
 
-  // 4. 事件监听
+  // 页面加载
   document.addEventListener('DOMContentLoaded', function() {
-    // 初始化搜索
-    initSearch();
+    // 延迟初始化，确保所有脚本加载完成
+    setTimeout(initSearch, 1000);
     
     const searchInput = document.getElementById('search-input');
     
-    // 实时搜索（带防抖）
+    // 实时搜索
     searchInput.addEventListener('input', debounce(function(e) {
       const query = e.target.value.trim();
       
@@ -279,7 +280,6 @@ permalink: /search/
         document.getElementById('search-status').textContent = 
           `正在搜索: "${query}"`;
         
-        // 更新URL但不刷新页面
         const url = new URL(window.location);
         url.searchParams.set('q', query);
         window.history.pushState({}, '', url);
@@ -290,11 +290,12 @@ permalink: /search/
       }
       
       performSearch(query);
-    }, 350)); // 350ms防抖
+    }, 350));
     
-    // 支持Enter键搜索
+    // Enter键搜索
     searchInput.addEventListener('keypress', function(e) {
       if (e.key === 'Enter') {
+        e.preventDefault();
         const query = e.target.value.trim();
         if (query) {
           performSearch(query);
@@ -302,7 +303,7 @@ permalink: /search/
       }
     });
     
-    // 页面加载时自动聚焦到搜索框
+    // 自动聚焦
     searchInput.focus();
   });
 </script>
