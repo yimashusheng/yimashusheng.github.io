@@ -19,9 +19,9 @@ permalink: /search/
 <!-- Lunr核心库 -->
 <script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script>
 <!-- 中文分词支持（必须按顺序引入） -->
-<script src="https://unpkg.com/lunr-languages@1.10.0/lunr.stemmer.support.min.js"></script>
-<script src="https://unpkg.com/lunr-languages@1.10.0/lunr.multi.min.js"></script>
-<script src="https://unpkg.com/lunr-languages@1.10.0/lunr.zh.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.10.0/lunr.stemmer.support.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.10.0/lunr.multi.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.10.0/lunr.zh.min.js"></script>
 
 <script>
   // 防抖函数
