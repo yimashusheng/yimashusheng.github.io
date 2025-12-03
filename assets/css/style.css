@@ -1,5 +1,5 @@
 .post-content p {text-indent:0em;}
 .post-content blockquote p {text-indent:0em !important;}
 .post-content li p {text-indent:0em !important;}
-.site-nav .page-link{color:white;}
-.site-header{background-color:black;}
+.site-nav .page-link{color:white !important;}
+.site-header{background-color:black !important;}
