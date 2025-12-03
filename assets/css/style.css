@@ -3,9 +3,6 @@
 .post-content li p {text-indent:0em !important;}
 .site-nav .page-link{color:white !important;}
 .site-header{background-color:black !important;}
-
-@media screen and (max-width: 600px) {
-    .site-nav {
-        background-color: black !important;
-    }
+.site-nav {
+    background-color: black !important;
 }
