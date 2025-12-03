@@ -33,9 +33,9 @@ permalink: /search/
     
     // 动态加载中文支持
     const scripts = [
-      'https://unpkg.com/lunr-languages@1.10.0/lunr.stemmer.support.min.js',
-      'https://unpkg.com/lunr-languages@1.10.0/lunr.multi.min.js', 
-      'https://unpkg.com/lunr-languages@1.10.0/lunr.zh.min.js'
+      'https://cdn.jsdelivr.net/npm/lunr-languages@1.10.0/lunr.stemmer.support.min.js',
+      'https://cdn.jsdelivr.net/npm/lunr-languages@1.10.0/lunr.multi.min.js', 
+      'https://cdn.jsdelivr.net/npm/lunr-languages@1.10.0/lunr.zh.min.js'
     ];
     
     let loadedCount = 0;
