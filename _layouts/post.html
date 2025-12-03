@@ -25,25 +25,3 @@ layout: default
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
-
- <!-- Gitalk comment start  -->
-
- <!-- Link Gitalk  -->
- <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
- <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script> 
- <div id="gitalk-container"></div>
- <script type="text/javascript">
-     var gitalk = new Gitalk({
-
-     // Gitalk parameters
-         clientID: '3f60819623da997cad93', //customize
-         clientSecret: 'ee185597c770e36d8fe73539a54f68294ecd436b', //customize
-         repo: 'yimashusheng.github.io', //customize
-         owner: 'yimashusheng', //customize
-         admin: ['yimashusheng'], //customize
-         id: decodeURI('{{ page.url }}'), // leave this line as it is
-        
-     });
-     gitalk.render('gitalk-container');
- </script> 
- <!-- Gitalk end -->
