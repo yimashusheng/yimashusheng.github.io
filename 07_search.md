@@ -20,61 +20,9 @@ permalink: /search/
 <script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script>
 <!-- 中文分词支持（必须按顺序引入） -->
 
-
-<script>
-  // 确保基础lunr加载后，再加载中文支持
-  window.addEventListener('load', function() {
-    if (typeof lunr === 'undefined') {
-      console.error('Lunr.js加载失败！');
-      return;
-    }
-    
-    console.log('Lunr基础库加载成功，版本:', lunr.version);
-    
-    // 动态加载中文支持
-    const scripts = [
-      'https://cdn.jsdelivr.net/npm/lunr-languages@1.10.0/lunr.stemmer.support.min.js',
-      'https://cdn.jsdelivr.net/npm/lunr-languages@1.10.0/lunr.multi.min.js', 
-      'https://cdn.jsdelivr.net/npm/lunr-languages@1.10.0/lunr.zh.min.js'
-    ];
-    
-    let loadedCount = 0;
-    
-    scripts.forEach((src, index) => {
-      const script = document.createElement('script');
-      script.src = src;
-      script.onload = function() {
-        loadedCount++;
-        console.log(`加载成功: ${src.split('/').pop()}`);
-        
-        if (loadedCount === scripts.length) {
-          console.log('所有中文支持库已加载完成');
-          console.log('lunr.zh:', typeof lunr.zh);
-          
-          // 所有脚本加载完成后，初始化搜索
-          setTimeout(initSearch, 100);
-        }
-      };
-      script.onerror = function() {
-        console.error(`加载失败: ${src}`);
-        // 尝试备用CDN
-        const backupSrc = src.replace('unpkg.com', 'cdn.jsdelivr.net/npm');
-        const backupScript = document.createElement('script');
-        backupScript.src = backupSrc;
-        backupScript.onload = script.onload;
-        backupScript.onerror = function() {
-          console.error(`备用CDN也失败: ${backupSrc}`);
-          loadedCount++;
-          if (loadedCount === scripts.length) {
-            initSearch(); // 即使失败也继续初始化
-          }
-        };
-        document.head.appendChild(backupScript);
-      };
-      document.head.appendChild(script);
-    });
-  });
-</script>
+<script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.10.0/lunr.stemmer.support.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.10.0/lunr.multi.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.10.0/lunr.zh.min.js"></script>
 
 <script>
   // 防抖函数
