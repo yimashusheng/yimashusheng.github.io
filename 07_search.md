@@ -558,7 +558,7 @@ permalink: /search/
   
   #search-input {
     width: 100%;
-    padding: 1rem 3rem 1rem 1.5rem;
+    padding: 1rem 0rem 1rem 1.5rem;
     font-size: 1.1rem;
     border: 2px solid #ddd;
     border-radius: 50px;
@@ -814,7 +814,7 @@ permalink: /search/
     }
     
     #search-input {
-      padding: 0.8rem 2.5rem 0.8rem 1.2rem;
+      padding: 0.8rem 0rem 0.8rem 1.2rem;
       font-size: 1rem;
     }
     

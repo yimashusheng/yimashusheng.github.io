@@ -4,8 +4,9 @@
 .site-nav .page-link{color:white !important;}
 .site-header{background-color:black !important;}
 .site-nav {
-    background-color: black !important;
+    background-color:black !important;
+    z-index:1;
 }
 .site-title {
-    color: white !important;
+    color:white !important;
 }
