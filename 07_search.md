@@ -17,11 +17,11 @@ permalink: /search/
 <link rel="stylesheet" href="/assets/css/search.css">
 
 <!-- Lunr核心库 -->
-<script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script>
+<script src="/js/lunr.min.js"></script>
 <!-- 中文分词支持（必须按顺序引入） -->
-<script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.10.0/lunr.stemmer.support.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.10.0/lunr.multi.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.10.0/lunr.zh.min.js"></script>
+<script src="/js/lunr.stemmer.support.min.js"></script>
+<script src="/js/lunr.multi.min.js"></script>
+<script src="/js/lunr.zh.min.js"></script>
 
 <script>
   // 防抖函数
