@@ -23,7 +23,7 @@ permalink: /search/
   
   <div id="search-results" class="search-results">
     <div class="initial-message">
-      <h3>💡 搜索提示</h3>
+      <h3>💡搜索提示</h3>
       <ul>
         <li>支持中文、英文、拼音搜索</li>
         <li>支持多个关键词（空格分隔）</li>
