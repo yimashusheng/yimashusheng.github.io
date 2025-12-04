@@ -427,12 +427,6 @@ permalink: /search/
           <li>支持模糊匹配和拼写容错</li>
           <li>搜索结果按相关性排序</li>
         </ul>
-        <div class="example-queries">
-          <p>试试搜索：</p>
-          <button class="example-query" data-query="JavaScript">JavaScript</button>
-          <button class="example-query" data-query="教程">教程</button>
-          <button class="example-query" data-query="网页开发">网页开发</button>
-        </div>
       </div>
     `;
     
@@ -561,7 +555,7 @@ permalink: /search/
     padding: 1rem 0rem 1rem 1.5rem;
     font-size: 1.1rem;
     border: 2px solid #ddd;
-    border-radius: 50px;
+    border-radius: 0px;
     outline: none;
     transition: all 0.3s ease;
     background: #f8f9fa;
@@ -575,7 +569,7 @@ permalink: /search/
   
   .search-actions {
     position: absolute;
-    right: 1rem;
+    right: 0rem;
     top: 50%;
     transform: translateY(-50%);
   }
@@ -635,6 +629,7 @@ permalink: /search/
     display: inline-block;
     padding-left: 1.5rem;
     color: #666;
+	 margin-left:0px;
   }
   
   .initial-message li,
@@ -814,7 +809,7 @@ permalink: /search/
     }
     
     #search-input {
-      padding: 0.8rem 0rem 0.8rem 1.2rem;
+      padding: 0.8rem 0rem 0.8rem 0rem;
       font-size: 1rem;
     }
     
