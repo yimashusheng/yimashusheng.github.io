@@ -15,7 +15,7 @@ permalink: /qimendunjia/
 
 可能由于各地网络运营商对海外网站的屏蔽策略不同，有的地区能从以上链接直接下载，如以上链接无法下载，您可使用如下的腾讯微云分享链接下载
 
-<a href="https://share.weiyun.com/xnPX5ISO" data-umami-event="奇门遁甲（腾讯微云分享）">腾讯微云分享</a>
+<a href="https://share.weiyun.com/xnPX5ISO" data-umami-event="奇门遁甲（腾讯微云分享）" target="_blank">腾讯微云分享</a>
 
 # 更新记录
 
