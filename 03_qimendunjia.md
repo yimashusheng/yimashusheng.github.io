@@ -11,11 +11,11 @@ permalink: /qimendunjia/
 
 **温馨提示：这个软件是Windows系统版本，只能在Windows系统中运行，无法在苹果电脑、ipad、手机等设备中运行。软件没有任何联网操作，所有数据均在本地数据库存储，同时也不会对您的任何信息进行搜集，您可放心使用。**
 
-[奇门遁甲20241009](/downloads/奇门遁甲20241009.zip)
+<a href="/downloads/奇门遁甲20241009.zip" data-umami-event="奇门遁甲（github）">奇门遁甲20241009</a>
 
 可能由于各地网络运营商对海外网站的屏蔽策略不同，有的地区能从以上链接直接下载，如以上链接无法下载，您可使用如下的腾讯微云分享链接下载
 
-[腾讯微云分享](https://share.weiyun.com/xnPX5ISO)
+<a href="https://share.weiyun.com/xnPX5ISO" data-umami-event="奇门遁甲（腾讯微云分享）">腾讯微云分享</a>
 
 # 更新记录
 

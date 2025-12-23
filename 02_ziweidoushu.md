@@ -14,11 +14,11 @@ permalink: /ziweidoushu/
 
 **温馨提示：这个软件是Windows系统版本，只能在Windows系统中运行，无法在苹果电脑、ipad、手机等设备中运行。软件没有任何联网操作，所有数据均在本地数据库存储，同时也不会对您的任何信息进行搜集，您可放心使用。**
 
-[紫微斗数20250707](/downloads/紫微斗数20250707.zip)
+<a href="/downloads/紫微斗数20250707.zip" data-umami-event="紫微斗数下载（github）">紫微斗数20250707</a>
 
 可能由于各地网络运营商对海外网站的屏蔽策略不同，有的地区能从以上链接直接下载，如以上链接无法下载，您可使用如下的腾讯微云分享链接下载
 
-[腾讯微云分享链接](https://share.weiyun.com/NTY3DMbo)
+<a href="https://share.weiyun.com/NTY3DMbo" data-umami-event="紫微斗数下载（腾讯微云分享）">腾讯微云分享链接</a>
 
 # 更新记录
 
