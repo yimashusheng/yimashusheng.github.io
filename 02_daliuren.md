@@ -19,14 +19,14 @@ permalink: /daliuren/
 
 可能由于各地网络运营商对海外网站的屏蔽策略不同，有的地区能从以上链接直接下载，如以上链接无法下载，您可使用如下的腾讯微云分享链接下载
 
-<a href="https://share.weiyun.com/AxoEEmsC" data-umami-event="大六壬下载（腾讯微云分享）" target="_blank">腾讯微云分享</a>
+<a href="https://share.weiyun.com/f1CKzVZL" data-umami-event="大六壬下载（腾讯微云分享）" target="_blank">腾讯微云分享</a>
 
 # 更新记录
 
 ## 2025-12-24
 
 - ✨新增：软件自动检测是否有新的发布版本。
-- ✨新增：可针对案例设置是否调整盘面的贵人所在地支。
+- ✨新增：可针对占例设置是否调整盘面的贵人所在地支。
 - ⚡优化：盘面提示信息、点击宫位提示信息。
 
 
