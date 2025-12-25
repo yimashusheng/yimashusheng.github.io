@@ -5,7 +5,7 @@ description: 大六壬盛行于汉朝、三国、魏晋南北朝，文人名士�
 permalink: /daliuren/
 ---
 
-![大六壬排盘工具](/images/dlr/2023-11-1_16-45-20.png)
+![大六壬排盘工具](/images/dlr/daliuren_show.png)
 
 **大六壬排盘工具正式版价格：¥200元。如果您对正式版感兴趣，感谢您对作者的支持。**
 
