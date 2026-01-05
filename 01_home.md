@@ -40,10 +40,7 @@ permalink: /
 
 ![](/images/aiguoxue.png)
 
-apk下载：  
-<a href="/downloads/aiguoxue-release-20260105.apk" data-umami-event="爱国学app下载（github）">aiguoxue-release-20260105.apk</a>
 
-<a href="https://share.weiyun.com/uWlLF1dX" data-umami-event="爱国学app（腾讯微云分享）" target="_blank">腾讯微云分享</a>
 
 
 ---
